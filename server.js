@@ -13,12 +13,12 @@ client.on('error', err => console.error(err));
 
 // app.use(cors());
 
-app.use( express.static('./public') );
+app.use( express.static('./views') );
 
-app.get('/proof-of-life', (req, res) => res.send('Hello, World!'));
+app.get('/hello', (req, res) => res.sendFile('index.ejs'));
 
-app.get('/articles', (req, res) => {
-  client.query(`SELECT * from articles;`)
+app.get('/books', (req, res) => {
+  client.query(`SELECT * from books_app;`)
   .then(results => res.send(results.rows))
   .catch(console.error);
 });
@@ -26,5 +26,3 @@ app.get('/articles', (req, res) => {
 app.get('*', (req, res) => res.send('Access Denied'));
 
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
-
-
