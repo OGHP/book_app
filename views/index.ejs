@@ -7,10 +7,12 @@
 </head>
 <body>
 <h1>Our Books</h1>
-<ul>
-    <% items.forEach( item => { %>
-        <li><a href="/<%= item.books %>"><%= item.books %></a></li>
+<% books.forEach( book => { %>
+    <div class="book-card">
+        <img src="<%= book.image_url %>">
+        <p class="title"><%= book.title %></p>
+        <p class="author"><%= book.author %></p>
+    </div>
     <% }); %>
-</ul>
 </body>
 </html>

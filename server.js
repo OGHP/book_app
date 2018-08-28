@@ -15,19 +15,17 @@ client.connect();
 client.on('error', err => console.error(err));
 
 app.get('/', (request, response) => {
-  response.render('index');
-});
-
-app.get('/books', showBooks);
-
-function showBooks( request, response ) {
-  let SQL = "SELECT * FROM books";
+  let SQL = 'SELECT title, author, image_url FROM books';
   client.query(SQL)
-  .then( data => {
-    let books = data.rows;
-    response.render('books', {books:title});
-  })
-}
+    .then( data => {
+      let bookData = data.rows;
+      response.render('index', {books:bookData});
+    })
+    .catch(err => {
+      console.log(err);
+      response.render('pages/error');
+    });
+});
 
 app.use( express.static('./public') );
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
