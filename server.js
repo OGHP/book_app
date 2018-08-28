@@ -21,11 +21,22 @@ app.get('/', (request, response) => {
       let bookData = data.rows;
       response.render('index', {books:bookData});
     })
+
+    //added (from code review) all of our routes will need this!
     .catch(err => {
-      console.log(err);
-      response.render('pages/error');
+      throwDatabaseError(response, err)
     });
 });
 
-app.use( express.static('./public') );
+//added function (from code review)
+function throwDatabaseError(response, error) {
+    response.render('pages/error');
+};
+
+//added __dirname (from code review)
+app.use( express.static(__dirname + './public') );
+
+//added (from code review) I think this should be a 404. It's the last thing the load will look at & ONLY if needed
+app.use('*', (request, response) => response.render('pages/error') );
+
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
