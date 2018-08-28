@@ -9,6 +9,7 @@ const PORT = process.env.PORT || 3000;
 const CLIENT_URL = process.env.CLIENT_URL;
 
 const CONSTRING = process.env.DATABASE_URL || 'postgres://localhost:5432/postgresql-animated-22077'
+// const CONSTRING = process.env.DATABASE_URL || 'postgres://localhost:5432/books_app'
 
 const client = new pg.Client(CONSTRING);
 client.connect();
@@ -24,6 +25,7 @@ function showBooks( request, response ) {
   let SQL = "SELECT * FROM books";
   client.query(SQL)
   .then( data => {
+      console.log(data.rows);
     let books = data.rows;
     response.render('books', {books:title});
   })
