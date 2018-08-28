@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Its Alive</title>
+</head>
+<body>
+<main>
+    <h1>This is being served by my index.html file!</h1>
+    Checkout the console, there should be some really nerdy stuff in there ...
+</main>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script>
+
+  (function(){
+    let url = 'https://swapi.co/api/starships';
+    $.getJSON(url)
+    .then(ships => console.log(ships))
+    .catch( console.error );
+  })();
+
+</script>
+</body>
+</html>
