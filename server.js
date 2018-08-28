@@ -18,6 +18,8 @@ app.get('/', (request, response) => {
   response.render('index');
 });
 
+app.get('/books', showBooks);
+
 function showBooks( request, response ) {
   let SQL = "SELECT * FROM books";
   client.query(SQL)
