@@ -25,7 +25,7 @@ function showBooks( request, response ) {
   client.query(SQL)
   .then( data => {
     let books = data.rows;
-    response.render('books', {items:title});
+    response.render('books', {books:title});
   })
 }
 
