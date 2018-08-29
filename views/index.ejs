@@ -1,19 +1,28 @@
 
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Happy Halloween!</title>
-    <link rel="stylesheet" href="/styles/base.css"/>
-    <!-- <link rel="stylesheet" href="./base.css"/> -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Horror Novels</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/styles/reset.css">
+    <link rel="stylesheet" type="text/css" href="/styles/icons.css">
+    <link rel="stylesheet" type="text/css" href="/styles/base.css">
+    <link rel="stylesheet" type="text/css" href="/styles/layout.css">
+    <link rel="stylesheet" type="text/css" href="/styles/modules.css">
+    <link rel="icon" type="image/x-icon" href="https://avatars2.githubusercontent.com/u/18607604?v=3&s=200">
 </head>
 <body>
 <h1>Our Books</h1>
+<section class="col-1">
 <% books.forEach( book => { %>
     <div class="book-card">
         <img src="<%= book.image_url %>">
         <p class="title"><%= book.title %></p>
         <p class="author"><%= book.author %></p>
+        <p class="description"><%= book.description %></p>
     </div>
     <% }); %>
+</section>
 </body>
 </html>

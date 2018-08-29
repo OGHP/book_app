@@ -1,5 +1,12 @@
-/*(from code review) */
+/* === BASE RULES === */
 
-html {
-    background-color: red;
+body {
+  line-height: 1.5;
+  font-size: 100%;
+  color: #313131;
+  font-family: sans-serif;
+}
+
+main {
+  margin: 0 20px;
 }
