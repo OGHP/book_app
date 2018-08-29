@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/fncreative/book_app#readme",
   "dependencies": {
+    "dotenv": "^6.0.0",
     "ejs": "^2.6.1",
     "express": "^4.16.3",
     "pg": "^7.4.3"
