@@ -1,14 +1,20 @@
 'use strict';
 
+require('dotenv').config();
+
 const pg = require('pg');
 const express = require('express');
 let app = express();
 app.set('view engine', 'ejs');
 
-const PORT = process.env.PORT || 3000;
+// const PORT = process.env.PORT || 3000;
+//removed PORT defaults per John's lecture Tuesday
+const PORT = process.env.PORT;
 const CLIENT_URL = process.env.CLIENT_URL;
 
-const CONSTRING = process.env.DATABASE_URL || 'postgres://localhost:5432/books_app'
+// const CONSTRING = process.env.DATABASE_URL || 'postgres://localhost:5432/postgresql-animated-22077'
+//removed CONSTRING defaults per John's lecture Tuesday
+const CONSTRING = process.env.DATABASE_URL
 
 const client = new pg.Client(CONSTRING);
 client.connect();
