@@ -21,7 +21,7 @@ client.connect();
 client.on('error', err => console.error(err));
 
 app.get('/', (request, response) => {
-  let SQL = 'SELECT title, author, description, image_url FROM books';
+  let SQL = 'SELECT title, author, description, image_url, id FROM books';
   client.query(SQL)
     .then( data => {
       let bookData = data.rows;
@@ -33,6 +33,24 @@ app.get('/', (request, response) => {
       throwDatabaseError(response, err)
     });
 });
+
+app.get('/show/:id', showDetails);
+
+function showDetails( request, response ) {
+  let detail = request.params.id;
+  let SQL = `
+  SELECT title, author, description, image_url, isbn 
+    FROM books
+    WHERE id = $1
+  `;
+  let values = [detail];
+
+  client.query(SQL,values)
+  .then( data => {
+    let bookDetails = data.rows;
+    response.render('show', {books:bookDetails});
+  })
+}
 
 //added function (from code review)
 function throwDatabaseError(response, error) {
