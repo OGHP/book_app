@@ -13,16 +13,66 @@
   float: left;
 }
 
-nav {
-  float: right;
+#burger {
+  display: block;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  cursor: pointer;
 }
+#burger span {
+  position: absolute;
+  top: 24px;
+  left: 0px;
+  width: 50px;
+  height: 2px;
+  background: red;
+  transition: all 0.1s ease-out;
+  transition-delay: 0.1s;
+}
+#burger span:before, #burger span:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0px;
+  width: 50px;
+  height: 2px;
+  background: red;
+  transform-origin: center;
+  transition: all 0.2s ease-out;
+}
+#burger span:before {
+  top: -10px;
+}
+#burger span:after {
+  top: 10px;
+}
+#burger:hover span:before {
+  top: -13px;
+}
+#burger:hover span:after {
+  top: 13px;
+}
+#burger.active span {
+  height: 0px;
+  transition: all 0.1s ease-out;
+  
+}
+#burger.active span:before {
+  top: 0px;
+  transform: rotate(45deg);
+}
+#burger.active span:after {
+  top: 0px;
+  transform: rotate(-45deg);
+}
+
 
 .icon-menu.navigation {
   color: white;
   text-decoration: none;
 }
 
-/* page title */
 
 .page-title {
   background-color: #656171;
@@ -31,8 +81,6 @@ nav {
   padding: .5em;
   text-align: center;
 }
-
-/* book cards */
 
 .book-card {
   background: rgba(255, 255, 255, .5);
