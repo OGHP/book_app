@@ -1,13 +1,14 @@
 <h1 class="title">Our Books</h1>
 <nav class="nav">
 <a id="burger"><span></span></a>
-<a id="links" href="/">Home</a>
-<a id="links" href="/">Add a book</a>
-<a id="links" href="/">Search</a>
+<a class="links" href="/">Home</a>
+<a class="links" href="/">Add a book</a>
+<a class="links" href="/">Search</a>
 </nav>
 	<script type="text/javascript">
 		let burger = document.getElementById('burger');
 		burger.addEventListener('click', function() {
       burger.classList.toggle('active');
+      $('.links').toggleClass('links-active');
     });
 	</script>

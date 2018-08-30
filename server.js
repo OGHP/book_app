@@ -7,8 +7,10 @@ const express = require('express');
 let app = express();
 app.set('view engine', 'ejs');
 
+
 // const PORT = process.env.PORT || 3000;
 //removed PORT defaults per John's lecture Tuesday
+app.use( express.urlencoded({extended:true}) );
 const PORT = process.env.PORT;
 const CLIENT_URL = process.env.CLIENT_URL;
 
@@ -19,6 +21,11 @@ const CONSTRING = process.env.DATABASE_URL
 const client = new pg.Client(CONSTRING);
 client.connect();
 client.on('error', err => console.error(err));
+
+app.post ('/new', addBook);
+
+
+// - - - - - FUNCTIONS - - - - -  // 
 
 app.get('/', (request, response) => {
   let SQL = 'SELECT title, author, description, image_url, id FROM books';
@@ -51,6 +58,26 @@ function showDetails( request, response ) {
     response.render('show', {books:bookDetails});
   })
 }
+
+// on form submit push into database
+function addBook (request, response) {
+  let SQL = `INSERT INTO books (title, author, isbn, image_url, description)
+  VALUES ($1, $2, $3, $4, $5)
+  `;
+
+  let values = [
+    request.body.title,
+    request.body.author,
+    request.body.isbn,
+    request.body.image_url,
+    request.body.description
+  ];
+
+  client.query(SQL, values)
+    .then( () => {
+      response.render('success', {link:request.body});
+    });
+};
 
 //added function (from code review)
 function throwDatabaseError(response, error) {
