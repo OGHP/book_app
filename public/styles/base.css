@@ -1,7 +1,7 @@
 body {
-  background-image: linear-gradient(to top, #d1cfda, #d7d5df, #dddbe4, #e3e1ea, #e9e7ef);
-  color: #0B1B18;
-  font-family: Quicksand, sans-serif;
+  background-color: #e9e7ef;
+  color: rgb(0, 0, 0);
+  font-family: 'Oswald', sans-serif;
   font-size: 20px;
 }
 
@@ -13,9 +13,7 @@ h2 {
   font-weight: 700;
 }
 
-a,
-a:hover,
-a:active {
+a, a:hover, a:active, a:visited {
   text-decoration: none;
   color: white;
 }
