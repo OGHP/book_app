@@ -1,64 +1,11 @@
-/* === OVERALL LAYOUT RULES === */
-
-header section {
-  max-width: 80%;
-  float: left;
-  padding: 0 0 .2em 1em;
-}
-
-select {
-  width: 90%;
-  margin: .2em 5%;
-}
-
-img {
-  max-width: 100%;
-}
-
-.col-1 {
+.container {
+  margin: 0 auto;
+  max-width: 768px;
   width: 100%;
+}
+
+.container-inner {
+  width: 90%;
+  padding-top: 1em;
   margin: 0 auto;
-}
-
-/* === FLOATING AND CLEARFIX === */
-
-.pull-left {
-  float: left;
-}
-
-.pull-right {
-  float: right;
-}
-
-.clearfix::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.book-card {
-  margin: 0 auto;
-  padding: 10px;
-}
-
-.description {
-  width: 50%;
-}
-
-/* === MEDIA QUERY === */
-
-@media only screen and (min-width: 640px) {
-  header section {
-    padding: .1em .1em .1em 2em;
-    float: none;
-  }
-
-  select {
-    width: 15em;
-    margin: .2em .2em;
-  }
-
-  #filters li {
-    display: inline;
-  }
 }
