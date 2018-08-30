@@ -1,45 +1,48 @@
-/* site title, menu */
-
-.site-title {
-  background-color: #142e33;
+.title {
+  background-color: #05090a;
   color: white;
+  font-family: 'Oswald', sans-serif;
   font-size: 2em;
-  font-family: sans-serif;
   padding: .5em;
   overflow: hidden;
 }
 
-.site-title h1 {
+.title h1 {
   float: left;
+  margin-top: 5px;
 }
 
 #burger {
   display: block;
   width: 50px;
   height: 50px;
-  position: relative;
+  position: absolute;
   cursor: pointer;
+  right: 30px;
+  top: 15px;
 }
+
 #burger span {
+  background: rgb(214, 118, 39);
+  height: 2px;
+  left: 0px;
   position: absolute;
   top: 24px;
-  left: 0px;
-  width: 50px;
-  height: 2px;
-  background: red;
   transition: all 0.1s ease-out;
   transition-delay: 0.1s;
+  width: 50px;
 }
+
 #burger span:before, #burger span:after {
+  background: rgb(214, 118, 39);
   content: '';
   display: block;
-  position: absolute;
-  left: 0px;
-  width: 50px;
   height: 2px;
-  background: red;
+  left: 0px;
+  position: absolute;
   transform-origin: center;
   transition: all 0.2s ease-out;
+  width: 50px;
 }
 #burger span:before {
   top: -10px;
@@ -67,16 +70,12 @@
   transform: rotate(-45deg);
 }
 
-
 .icon-menu.navigation {
-  color: white;
   text-decoration: none;
 }
 
-
 .page-title {
   background-color: #656171;
-  color: white;
   font-size: 1.2em;
   padding: .5em;
   text-align: center;
@@ -85,14 +84,14 @@
 .book-card {
   background: rgba(255, 255, 255, .5);
   border-radius: 2px;
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, .2);
+  box-shadow: 2px 2px 2px #05090a;
   padding: 1em;
   margin: 1em 0;
   text-align: center;
 }
 
 .book-card img {
-  box-shadow: 2px 2px 3px rgba(0,0,0,.2);
+  box-shadow: 2px 2px 3px #05090a;
   width: 200px;
 }
 
@@ -102,7 +101,7 @@
 }
 
 .book-card h1 {
-  color: #53264A;
+  color: rgb(192, 117, 56);
   font-size: 1.2em;
   font-weight: bold;
 }
@@ -111,20 +110,18 @@
   font-style: italic;
 }
 
-.book-card .button {
-  background-color: #53264A;
+.book-card .submit {
+  background-color: rgb(214, 118, 39);
   border-radius: 2px;
-  box-shadow: 2px 2px 3px rgba(0,0,0,.2);
-  color: white;
+  box-shadow: 2px 2px 3px #05090a;
   display: block;
   margin: 1em auto;
   padding: 1em 1.5em;
   text-decoration: none;
-  width: fit-content;
 }
 
-.book-card .button:hover {
-  background-color: #142e33;
+.book-card .submit:hover {
+  background-color: #05090a;
 }
 
 .book_description {

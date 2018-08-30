@@ -9,3 +9,7 @@
   padding-top: 1em;
   margin: 0 auto;
 }
+
+.description {
+  line-height: 1.5em;
+}

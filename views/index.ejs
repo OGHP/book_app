@@ -11,17 +11,19 @@
     <link rel="stylesheet" type="text/css" href="/styles/base.css">
     <link rel="stylesheet" type="text/css" href="/styles/layout.css">
     <link rel="stylesheet" type="text/css" href="/styles/modules.css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="https://avatars2.githubusercontent.com/u/18607604?v=3&s=200">
 </head>
 <body>
     <% include ../partials/header.ejs %>
+
     <section class="col-1">
     <% books.forEach( book => { %>
         <div class="book-card">
             <img src="<%= book.image_url %>">
             <p class="title"><%= book.title %></p>
             <p class="author"><%= book.author %></p>
-            <button><a href="/show/<%= book.id %>">View Details: <%= book.title %></a></button>
+            <button class="submit"><a href="/show/<%= book.id %>">View Details: <%= book.title %></a></button>
         </div>
         <% }); %>
     </section>
