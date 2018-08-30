@@ -2,37 +2,37 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Horror Novels</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <% include ../partials/styles.ejs %>
+  <meta charset="UTF-8">
+  <title>Horror Novels</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <% include ../partials/styles.ejs %>
 </head>
 
 <body>
-    <h1 class="title">Book Details</h1>
-    <% include ../partials/header.ejs %>
+  <h1 class="title">Book Details</h1>
+  <% include ../partials/header.ejs %>
 
-    <section class="col-1">
-        <% books.forEach( book => { %>
-        <div class="book-card">
-            <img src="<%= book.image_url %>">
-            <p class="title">
-                <%= book.title %>
-            </p>
-            <p class="author">Author:
-                <%= book.author %>
-            </p>
-            <p class="description">
-                <%= book.description %>
-            </p>
-            <p class="isbn">isbn:
-                <%=  book.isbn %>
-            </p>
-        </div>
-        <% }); %>
-    </section>
-    <% include ../partials/footer.ejs %>
-    <% include ../partials/scripts.ejs %>
+  <section class="col-1">
+    <% books.forEach( book => { %>
+    <div class="book-card">
+      <img src="<%= book.image_url %>">
+      <p class="title">
+        <%= book.title %>
+      </p>
+      <p class="author">Author:
+        <%= book.author %>
+      </p>
+      <p class="description">
+        <%= book.description %>
+      </p>
+      <p class="isbn">isbn:
+        <%=  book.isbn %>
+      </p>
+    </div>
+    <% }); %>
+  </section>
+  <% include ../partials/footer.ejs %>
+  <% include ../partials/scripts.ejs %>
 </body>
 
 </html>

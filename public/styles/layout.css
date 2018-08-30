@@ -4,12 +4,6 @@
   width: 100%;
 }
 
-.container-inner {
-  width: 90%;
-  margin: 0 auto;
-  padding-top: 1em;
-}
-
 .description {
   line-height: 1.5em;
 }
