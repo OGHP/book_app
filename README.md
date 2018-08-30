@@ -26,6 +26,70 @@ The entire application will be deployed on Heroku with a PostgreSQL database pro
 
 
 ## Change Log
+Author: Daniel Frey <dann.frey@me.com>
+Date:   Thu Aug 30 11:42:52 2018 -0700
+
+    beautified files
+
+Author: Heather Palmer <palmerheather78@gmail.com>
+Date:   Thu Aug 30 11:39:45 2018 -0700
+
+    Added feature to go back home after adding a new book
+
+Author: Heather Palmer <palmerheather78@gmail.com>
+Date:   Thu Aug 30 11:27:21 2018 -0700
+
+    Added success page with link to go home
+
+Author: Heather Palmer <palmerheather78@gmail.com>
+Date:   Thu Aug 30 11:07:00 2018 -0700
+
+    Started form validation
+
+Author: Heather Palmer <palmerheather78@gmail.com>
+Date:   Thu Aug 30 10:49:01 2018 -0700
+
+    Add partials for styling
+
+Author: Daniel Frey <dann.frey@me.com>
+Date:   Thu Aug 30 10:34:16 2018 -0700
+
+    fixed css / added page
+
+Author: Daniel Frey <dann.frey@me.com>
+Date:   Thu Aug 30 06:58:51 2018 -0700
+
+    changed a couple of small css props
+
+Author: Daniel Frey <dann.frey@me.com>
+Date:   Wed Aug 29 20:57:36 2018 -0700
+
+    changed burger
+
+Author: Daniel Frey <dann.frey@me.com>
+Date:   Wed Aug 29 20:53:47 2018 -0700
+
+    alphabatized css
+
+Author: Daniel Frey <dann.frey@me.com>
+Date:   Wed Aug 29 20:47:10 2018 -0700
+
+    added nav / styles
+
+Author: Daniel Frey <dann.frey@me.com>
+Date:   Wed Aug 29 19:52:13 2018 -0700
+
+    details and css
+
+Author: Daniel Frey <dann.frey@me.com>
+Date:   Wed Aug 29 19:49:34 2018 -0700
+
+    finished details small css
+
+Author: Heather Palmer <palmerheather78@gmail.com>
+Date:   Wed Aug 29 19:13:25 2018 -0700
+
+    Add newest change logs to README
 
 Author: Heather Palmer <palmerheather78@gmail.com>
 Date:   Wed Aug 29 19:00:43 2018 -0700
@@ -47,12 +111,10 @@ Date:   Wed Aug 29 17:51:04 2018 -0700
 
     Add partials folders
 
-
 Author: Heather Palmer <palmerheather78@gmail.com>
 Date:   Tue Aug 28 16:16:57 2018 -0700
 
     Restructured CSS and error messages
-
 
 Author: Daniel Frey <dann.frey@me.com>
 Date:   Tue Aug 28 14:38:40 2018 -0700
