@@ -22,7 +22,7 @@ const client = new pg.Client(CONSTRING);
 client.connect();
 client.on('error', err => console.error(err));
 
-app.get ('/new', addBook);
+app.get ('/new', addBookForm);
 app.post ('/new', addBook);
 
 
@@ -60,7 +60,17 @@ function showDetails( request, response ) {
   })
 }
 
-// on form submit push into database
+function addBookForm(request, response) {
+  let data = {
+    book: request.params.book,
+    id: request.params.id
+  };
+
+  response.render('new', data);
+}
+
+
+
 function addBook (request, response) {
   let SQL = `INSERT INTO books (title, author, isbn, image_url, description)
   VALUES ($1, $2, $3, $4, $5)
@@ -76,7 +86,7 @@ function addBook (request, response) {
 
   client.query(SQL, values)
     .then( () => {
-      response.render('new', {link:request.body});
+      response.render('success', {link:request.body});
     });
 };
 
