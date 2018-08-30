@@ -63,11 +63,11 @@
 }
 #burger.active span:before {
   top: 0px;
-  transform: rotate(45deg);
+  transform: rotate(135deg);
 }
 #burger.active span:after {
   top: 0px;
-  transform: rotate(-45deg);
+  transform: rotate(-135deg);
 }
 
 .icon-menu.navigation {
