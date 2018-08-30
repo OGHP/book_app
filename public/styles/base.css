@@ -21,6 +21,10 @@ a.nav-links {
   background-color: #05090a;
 }
 
+a.success {
+  color: #05090a;
+}
+
 input {
   display: block;
   margin-bottom: 15px;
