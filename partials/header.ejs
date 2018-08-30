@@ -1,13 +1,13 @@
 <nav class="nav">
-<a id="burger"><span></span></a>
-<a class="links" href="/">Home</a>
-<a class="links" href="/new">Add a book</a>
-<a class="links" href="/">Search</a>
+	<a id="burger"><span></span></a>
+	<a class="links" href="/">Home</a>
+	<a class="links" href="/new">Add a book</a>
+	<a class="links" href="/">Search</a>
 </nav>
-	<script type="text/javascript">
-		let burger = document.getElementById('burger');
-		burger.addEventListener('click', function() {
-      burger.classList.toggle('active');
-      $('.links').toggleClass('links-active');
-    });
-	</script>
+<script type="text/javascript">
+	let burger = document.getElementById('burger');
+	burger.addEventListener('click', function () {
+		burger.classList.toggle('active');
+		$('.links').toggleClass('links-active');
+	});
+</script>

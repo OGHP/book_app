@@ -1,29 +1,31 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Horror Novels</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <% include ../partials/styles.ejs %>
-</head>
-    <body>
-      <h1 class="title">Book Details</h1>
-    <% include ../partials/header.ejs %>
 
-    <section class="col-1">
-            <div class="new-book-form">
-            <form method="POST" action="/new">
-            <input type="text" name="title" placeholder="Title"/>
-            <input type="text" name="author" placeholder="Author"/>
-            <input type="number" name="isbn" placeholder="isbn"/>
-            <input type="text" name="image_url" placeholder="image_url"/>
-            <input type="text" name="description" placeholder="description"/>
-            <button>Add Book</button>
-          </form>
-            </div>
-    </section>
-    <% include ../partials/footer.ejs %>
-    <% include ../partials/scripts.ejs %>
+<head>
+  <meta charset="UTF-8">
+  <title>Horror Novels</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <% include ../partials/styles.ejs %>
+</head>
+
+<body>
+  <h1 class="title">Book Details</h1>
+  <% include ../partials/header.ejs %>
+
+  <section class="col-1">
+    <div class="new-book-form">
+      <form method="POST" action="/new">
+        <input type="text" name="title" placeholder="Title" />
+        <input type="text" name="author" placeholder="Author" />
+        <input type="number" name="isbn" placeholder="isbn" />
+        <input type="text" name="image_url" placeholder="image_url" />
+        <input type="text" name="description" placeholder="description" />
+        <button>Add Book</button>
+      </form>
+    </div>
+  </section>
+  <% include ../partials/footer.ejs %>
+  <% include ../partials/scripts.ejs %>
 </body>
+
 </html>
