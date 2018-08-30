@@ -17,6 +17,9 @@ a, a:hover, a:active, a:visited {
   text-decoration: none;
   color: white;
 }
+a.nav-links {
+  background-color: #05090a;
+}
 
 input {
   display: block;
