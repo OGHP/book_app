@@ -12,18 +12,19 @@
     <link rel="stylesheet" type="text/css" href="/styles/modules.css">
     <link rel="icon" type="image/x-icon" href="https://avatars2.githubusercontent.com/u/18607604?v=3&s=200">
 </head>
-<body>
-<h1>Your Book</h1>
-<section class="col-1">
-<% books.forEach( book => { %>
-    <div class="book-card">
-        <img src="<%= book.image_url %>">
-        <p class="title"><%= book.title %></p>
-        <p class="author"><%= book.author %></p>
-        <p class="description"><%= book.description %></p>
-        <p class="isbn"><%=  book.isbn %></p>
-    </div>
-    <% }); %>
-</section>
+    <body>
+    <h1>Your Book</h1>
+    <section class="col-1">
+        <% books.forEach( book => { %>
+            <div class="book-card">
+                <img src="<%= book.image_url %>">
+                <p class="title"><%= book.title %></p>
+                <p class="author"><%= book.author %></p>
+                <p class="description"><%= book.description %></p>
+                <p class="isbn"><%=  book.isbn %></p>
+            </div>
+        <% }); %>
+    </section>
+    <% include ../partials/footer.ejs %>
 </body>
 </html>
