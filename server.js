@@ -22,10 +22,11 @@ const client = new pg.Client(CONSTRING);
 client.connect();
 client.on('error', err => console.error(err));
 
+app.get ('/new', addBook);
 app.post ('/new', addBook);
 
 
-// - - - - - FUNCTIONS - - - - -  // 
+// - - - - - FUNCTIONS - - - - -  //
 
 app.get('/', (request, response) => {
   let SQL = 'SELECT title, author, description, image_url, id FROM books';
@@ -46,7 +47,7 @@ app.get('/show/:id', showDetails);
 function showDetails( request, response ) {
   let detail = request.params.id;
   let SQL = `
-  SELECT title, author, description, image_url, isbn 
+  SELECT title, author, description, image_url, isbn
     FROM books
     WHERE id = $1
   `;
@@ -75,7 +76,7 @@ function addBook (request, response) {
 
   client.query(SQL, values)
     .then( () => {
-      response.render('success', {link:request.body});
+      response.render('new', {link:request.body});
     });
 };
 
