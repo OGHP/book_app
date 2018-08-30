@@ -3,16 +3,19 @@
 <html>
 <head>
     <title>Happy Halloween!</title>
+    <!-- <% include ../partials/styles.ejs %> -->
     <link rel="stylesheet" href="/style.css"/>
 </head>
 <body>
-<h1>Our Books</h1>
-<% books.forEach( book => { %>
-    <div class="book-card">
-        <img src="<%= book.image_url %>">
-        <p class="title"><%= book.title %></p>
-        <p class="author"><%= book.author %></p>
-    </div>
+    <% include ../partials/header.ejs %>
+    <% books.forEach( book => { %>
+        <div class="book-card">
+            <img src="<%= book.image_url %>">
+            <p class="title"><%= book.title %></p>
+            <p class="author"><%= book.author %></p>
+        </div>
     <% }); %>
 </body>
+    <% include ../partials/footer.ejs %>
+    <% include ../partials/scripts.ejs %>
 </html>
