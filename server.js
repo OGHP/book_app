@@ -7,23 +7,22 @@ const express = require('express');
 let app = express();
 app.set('view engine', 'ejs');
 
-
-// const PORT = process.env.PORT || 3000;
-//removed PORT defaults per John's lecture Tuesday
 app.use( express.urlencoded({extended:true}) );
 const PORT = process.env.PORT;
 const CLIENT_URL = process.env.CLIENT_URL;
-
-// const CONSTRING = process.env.DATABASE_URL || 'postgres://localhost:5432/postgresql-animated-22077'
-//removed CONSTRING defaults per John's lecture Tuesday
 const CONSTRING = process.env.DATABASE_URL
-
+const superagent = require('superagent');
 const client = new pg.Client(CONSTRING);
+
 client.connect();
 client.on('error', err => console.error(err));
 
 app.get ('/new', addBookForm);
 app.get('/show/:id', showDetails);
+app.get('/results', runSearch)
+app.get('/search',(request, response) => {
+  response.render('../views/pages/searches/search');
+});
 app.post ('/new', addBook);
 
 // - - - - - FUNCTIONS - - - - -  //
@@ -35,8 +34,6 @@ app.get('/', (request, response) => {
       let bookData = data.rows;
       response.render('index', {books:bookData});
     })
-
-    //added (from code review) all of our routes will need this!
     .catch(err => {
       throwDatabaseError(response, err)
     });
@@ -84,6 +81,32 @@ function addBook (request, response) {
     .then( () => {
       response.render('success', {link:request.body});
     });
+};
+
+function runSearch(request, response) {
+  let search = encodeURIComponent(request.query.search);
+   let url = 'https://www.googleapis.com/books/v1/volumes?q=in' + request.query.by + ':' + search;
+  console.log(request.query);
+  superagent.get(url)
+  .then( results => {
+    let listings = results.body.items.reduce(( items, item ) => {
+      let listing = {
+        title: item.volumeInfo.title,
+        author: item.volumeInfo.authors,
+        description: item.volumeInfo.description,
+        image_url: item.volumeInfo.imageLinks.smallThumbnail,
+        isbn: item.volumeInfo.industryIdentifiers[0].identifier
+      };
+      items.push (listing);
+      return items;
+    },[]);
+
+    response.render('pages/searches/results', {books:listings}); 
+  })
+  .catch(err => {
+    console.log(err);
+    response.status(500).send(err);
+  });
 };
 
 //added function (from code review)
