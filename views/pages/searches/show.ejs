@@ -5,14 +5,13 @@
   <meta charset="UTF-8">
   <title>Horror Novels</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <% include ../views/partials/styles.ejs %>
+  <% include ../../partials/styles.ejs %>
 </head>
 
 <body>
-  <h1 class="title">Our Books</h1>
+  <h1 class="title">Book Details</h1>
+  <% include ../../partials/header.ejs %>
 
-  <% include ../views/partials/header.ejs %>
-  
   <section class="col-1">
     <% books.forEach( book => { %>
     <div class="book-card">
@@ -20,16 +19,20 @@
       <p class="title">
         <%= book.title %>
       </p>
-      <p class="author">
+      <p class="author">Author:
         <%= book.author %>
       </p>
-      <button class="submit"><a href="/show/<%= book.id %>">View Details:
-          <%= book.title %></a></button>
+      <p class="description">
+        <%= book.description %>
+      </p>
+      <p class="isbn">isbn:
+        <%=  book.isbn %>
+      </p>
     </div>
     <% }); %>
   </section>
-  <% include ../views/partials/footer.ejs %>
-  <% include ../views/partials/scripts.ejs %>
+  <% include ../../partials/footer.ejs %>
+  <% include ../../partials/scripts.ejs %>
 </body>
 
 </html>

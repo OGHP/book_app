@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Horror Novels</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <% include ../../partials/styles.ejs %>
+</head>
+
+<body>
+  <h1 class="title">Search</h1>
+  <% include ../../partials/header.ejs %>
+
+  <section class="col-1">
+    <div class="new-book-form">
+      <form method="POST" action="/new">
+        <input type="hidden" name="title" value="<% item.title %>" />
+        <input type="hidden" name="author" value="<% item.author %>" />
+        <input type="hidden" name="isbn" value="<% item.isbn %>" />
+        <input type="hidden" name="image_url" value="<% item.image_url %>" />
+        <input type="hidden" name="description" value="<% item.description %>" />
+        <button>Add Book</button>
+      </form>
+    </div>
+  </section>
+  <% include ../../partials/footer.ejs %>
+  <% include ../../partials/scripts.ejs %>
+</body>
+
+</html>
