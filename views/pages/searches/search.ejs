@@ -14,13 +14,11 @@
 
   <section class="col-1">
     <div class="new-book-form">
-      <form method="POST" action="/new">
-        <input type="hidden" name="title" value="<% item.title %>" />
-        <input type="hidden" name="author" value="<% item.author %>" />
-        <input type="hidden" name="isbn" value="<% item.isbn %>" />
-        <input type="hidden" name="image_url" value="<% item.image_url %>" />
-        <input type="hidden" name="description" value="<% item.description %>" />
-        <button>Add Book</button>
+      <form method="GET" action="/results">
+        <input type="text" name="search" placeholder="Enter Title or Author" />
+        <label><span>By Title</span><input type="radio" name="by" value="title" /></label>
+        <label><span>By Author</span><input type="radio" name="by" value="author" /></label>
+        <button type='submit'>Submit</button>
       </form>
     </div>
   </section>
