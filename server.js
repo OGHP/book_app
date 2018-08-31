@@ -23,8 +23,8 @@ client.connect();
 client.on('error', err => console.error(err));
 
 app.get ('/new', addBookForm);
+app.get('/show/:id', showDetails);
 app.post ('/new', addBook);
-
 
 // - - - - - FUNCTIONS - - - - -  //
 
@@ -42,8 +42,6 @@ app.get('/', (request, response) => {
     });
 });
 
-app.get('/show/:id', showDetails);
-
 function showDetails( request, response ) {
   let detail = request.params.id;
   let SQL = `
@@ -56,7 +54,7 @@ function showDetails( request, response ) {
   client.query(SQL,values)
   .then( data => {
     let bookDetails = data.rows;
-    response.render('show', {books:bookDetails});
+    response.render('../views/pages/books/show', {books:bookDetails});
   })
 }
 
@@ -66,10 +64,8 @@ function addBookForm(request, response) {
     id: request.params.id
   };
 
-  response.render('new', data);
+  response.render('../views/pages/books/new', data);
 }
-
-
 
 function addBook (request, response) {
   let SQL = `INSERT INTO books (title, author, isbn, image_url, description)
@@ -92,13 +88,13 @@ function addBook (request, response) {
 
 //added function (from code review)
 function throwDatabaseError(response, error) {
-    response.render('pages/error');
+    response.render('../views/pages/error');
 };
 
 //added __dirname (from code review)
 app.use( express.static(__dirname + '/public') );
 
 //added (from code review) I think this should be a 404. It's the last thing the load will look at & ONLY if needed
-app.use('*', (request, response) => response.render('pages/error') );
+app.use('*', (request, response) => response.render('../views/pages/error') );
 
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
