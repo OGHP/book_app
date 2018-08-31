@@ -1,7 +1,7 @@
 # book_app
 
 **Author**: Heather Palmer and Daniel Frey
-**Version**: 1.0.41
+**Version**: 1.7.1
 
 ## Overview
 This is a basic full stack application for a book list which will render books from a PostgreSQL database. The application involves storing book objects in a database. The client can make a request to the server for retrieval of all books, which will then be rendered as a list in the browser.
@@ -26,6 +26,47 @@ The entire application will be deployed on Heroku with a PostgreSQL database pro
 
 
 ## Change Log
+Author: Daniel Frey <dann.frey@me.com>
+Date:   Fri Aug 31 13:32:47 2018 -0700
+
+    fixed nav
+
+
+Author: Daniel Frey <dann.frey@me.com>
+Date:   Fri Aug 31 13:26:22 2018 -0700
+
+    search finished
+
+
+Author: Heather Palmer <palmerheather78@gmail.com>
+Date:   Fri Aug 31 12:00:22 2018 -0700
+
+    Form styles
+
+
+Author: Daniel Frey <dann.frey@me.com>
+Date:   Fri Aug 31 10:30:34 2018 -0700
+
+    changed file structure
+
+
+Author: Daniel Frey <dann.frey@me.com>
+Date:   Thu Aug 30 16:18:43 2018 -0700
+
+    changed fonts
+
+Author: Daniel Frey <dann.frey@me.com>
+Date:   Thu Aug 30 14:48:43 2018 -0700
+
+    fixed indentation
+
+
+Author: Heather Palmer <palmerheather78@gmail.com>
+Date:   Thu Aug 30 11:55:17 2018 -0700
+
+    Add change log to README
+
+
 Author: Daniel Frey <dann.frey@me.com>
 Date:   Thu Aug 30 11:42:52 2018 -0700
 
@@ -172,5 +213,9 @@ Date:   Tue Aug 28 10:55:48 2018 -0700
     created new repo
 
 ## Credits and Collaborations
-<!-- Give credit (and a link) to other people or resources that helped you build this application. -->
--->
+John Cokos
+Scott Schmidt
+Katy Robinson
+Koko Kassa
+Random 401 grad
+Stack Overflow
