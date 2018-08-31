@@ -41,3 +41,21 @@
     display: none;
   }
 }
+
+.new-book-form {
+  margin-left: 20px;
+}
+
+.add-button {
+  background-color: black;
+  color: white;
+  font-family: 'Amatic SC', cursive;
+  font-size: large;
+  height: 40px;
+  width: 94px;
+}
+
+footer {
+  margin-top: 20%;
+  text-align: center;
+}
