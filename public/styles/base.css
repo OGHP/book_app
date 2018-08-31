@@ -10,12 +10,14 @@ img {
 }
 
 h2 {
+  font-family: 'Amatic SC', cursive;
   font-weight: 700;
 }
 
 a, a:hover, a:active, a:visited {
-  text-decoration: none;
   color: white;
+  font-family: 'Amatic SC', cursive;
+  text-decoration: none;
 }
 a.nav-links {
   background-color: #05090a;
