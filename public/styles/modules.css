@@ -1,13 +1,14 @@
 .title {
   background-color: #05090a;
   color: white;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Amatic SC', cursive;
   font-size: 2em;
   padding: .5em;
   overflow: hidden;
 }
 
 .title h1 {
+  font-family: 'Amatic SC', cursive;
   float: left;
   margin-top: 5px;
 }

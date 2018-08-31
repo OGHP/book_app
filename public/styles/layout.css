@@ -4,12 +4,6 @@
   width: 100%;
 }
 
-.container-inner {
-  width: 90%;
-  margin: 0 auto;
-  padding-top: 1em;
-}
-
 .description {
   line-height: 1.5em;
 }
@@ -30,4 +24,20 @@
   width: 100%;
   padding-bottom: 15px;
   z-index: 1;
+}
+
+@media only screen and (min-width: 768px) {
+  .burger {
+    display: none
+  }
+  .links {
+    display: inline;
+    left: 365px;
+    padding-right: 20px;
+    position: relative;
+    top: -60px;
+  }
+  span {
+    display: none;
+  }
 }
